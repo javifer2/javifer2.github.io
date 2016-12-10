@@ -195,7 +195,28 @@ blockquote {
   padding: 0 0 0 20px;
   border-left: 3px solid #bbb;
 }
-
+ul.menu {
+  background: #F4F4F4;
+  border: 1px solid #707000;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+ul.menu li {
+  float: left;
+  width: 16%;
+}
+ul.menu li a {
+  border-left: 1px solid #FFF;
+  border-right: 1px solid #7C7C7C;
+  color: #4A7C59;
+  display: block;
+  padding: .3em;
+	text-align: center;
+  text-decoration: none;
+	
+}
 
 ul, ol, dl {
   margin-bottom: 15px
