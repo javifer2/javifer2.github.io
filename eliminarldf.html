@@ -21,13 +21,189 @@
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
         <h3>Bienvenido al maravilloso mundo de Borrar es igual a crecer e ir más lento</h3>
-				<p>Como recordatorio, el manager de sql que veremos en las imágenes, esta en Inglés.</p>
-				<p> Si dispones de una edición en Castellano, todas las opciones están dispuestas del mismo modo. Es posible, que en esta misma demo, o incluso en otras, alguna de las imagenes, sea en Castellano.</p>
-				<h4>La primera pregunta, es obvia, ¿Porqué?</h4>
-				<p>
-				</p>
+					<p>Como mención especial antes de iniciar el/los ejemplos, el manager que utilizó en este equipo, de sql que veremos en las imágenes, esta en Inglés.</p>
 				
+					<p> Si dispones de una edición en Castellano, todas las opciones están dispuestas del mismo modo. Es posible, que en esta misma demo, o incluso en otras, alguna de las imagenes, sea en Castellano.</p>
+				
+				<h5>La primera pregunta, es obvia, ¿Porqué?</h5>
+					<p>La respuesta es más o menos simple. Borrar no es igual a eliminar ni tan siquiera vaciar. Toda eliminación (por defecto) conlleva el rastro de digestión que tiene que hacer el sistema en su archivo de registro <em>ldf</em>, o lo que es lo mismo, registrar con su script particular esta ejecución sql. <br><br/>
+					De tal modo que se pueda, depende del proceso a seguir, revertir la transacción.</p>
+				
+					<p>Además, los datos se almacenan en bloques, y al borrar, no se reordenan los datos, para ocupar los bloques, sino que estos quedan libres, por tanto borrar no es indicativo de más espacio, solo de tener espacio sin asignar.</p>
+				
+					<p>Una vez que esta claro, que borrar no es lo que parece, pasemos a un entorno más práctico.</p>
+				
+				<h3>Conexión al Motor Sql</h3>
+					<p><img src="images/splash1.JPG"/></p>
+				
+					<p>En la pantalla de conexión, necesitamos entrar en el Managment Studio con permisos suficientes para poder liberar a nuestra base de datos, o dicho de otro modo, queremos ser Sys Administrator. Por tanto o entramos con el usuario <strong>Administrador</strong> de Windows, o con el usuario <strong>sa</strong>, o con cualquier usuario que disponga de suficientes permisos. Al ejemplo directamente <Strong>Conectar</Strong></p>
+				
+				<h5>Utilización del manager.</h5>
+					<p>El primer paso claro, es que cuando te pongas a realizar estas pruebas, ten claro, que las acciones, que realizas con bases de datos en producción, pueden ser nefastas, por tanto, la conclusión es simple, <strong>siempre</strong>, <strong>siempre</strong>, <strong>siempre</strong>, <em> ten cubiertas las espaldas</em>.</p>
+				
+					<p>Por tanto, más vale prevenir, por tener varias copias de seguridad, que llorar por no disponer de ellas.</p>
+					
+					<p>Aunque en éste capítulo, no nos dedicaremos a esto, no obstante, vamos a realizar una copia de la base de datos de trabajo, para al menos tener una referncia.</p>
+						
+					<p>El tema de las copias de seguridad es mucho más importante, largo y complicado de lo que a priori puede parecer.</p>
+					
+					<p><img src="images/PropiedadesBBDD.JPG"/></p>
+					<p>Una vez conectados desplegaremos pulsando en el <strong><span style ="color:red;">más</span></strong> de la ventana de <strong><span style ="color:red;">Object Explorer</span></strong></p>
+					
+					<p>Seleccionamos la base de datos sobre la que queremos comprobar y trabajar. En el ejemplo la de nombre <span style="color:green;">revoke.demo</span>, el botón derecho del ratón y pulsamos sobre el elemento Properties o propiedades.  </p>
+					
+					<p>y en la <strong><span style="color:orange;">página: Files o Archivos</span></strong>, nos mostrará la información de espacio, que ocupan nuestros "al menos" dos archivos de base de datos.</p>
+					
+					<p>Como recordatorio, nuestra base de datos, suele estar formada por un archivo MDF (cabe la posibilidad de que se disponga de más archivos ndf,s.), y un archivo LDF (Esta es la configuración normal y por defecto de las bases de datos.</p>
+					
+					<p>En nuestro caso. Disponemos de un archivo de tipo <span style="color:blue;">ROWS o DATA o DATOS</span>, y otro de <strong><span style="color:blue;">LOG</span></strong> con sus tamaños.</p>
+					
+					<p>Si en el ejemplo disponemos de 257 megas de datos y 1665 de registro, ya que parece un tamaño un poco desproporcionado, vamos a trabajar sobre estos, y acondionar la base de datos para que sea más eficaz.</p>
+				
+				<h3>Backup</h3>
+					<p><img src="images/backup.JPG"/></p>
+				
+					<p>Donde flecha negra. New Query o nueva consulta para disponer de una ventana. </p>
+				
+					<p>Directamente os doy la sentencia transact para realizar un copiado, ya que es más simple que el propio manager <em>(esto ocurre bastante a menudo)</em> y solo teneís que 			cambiar vuestros nombres para ejecutarla. En color verde irá los datos a modificar. </p>
+				
+					<p><code>BACKUP DATABASE [<span style ="color:green">revoke.demo</span>] TO  DISK = N'<span style ="color:green">C:\bd\copiarevokedemo1012.bak</span>' WITH NOFORMAT, NOINIT,  NAME 	= N'<span style ="color:green">revoke.demo-Full Database Backup</span>', SKIP, NOREWIND, NOUNLOAD, 		STATS = 10
+						 GO</code></p>
+				
+					<p>La traducción sería algo así como: Haz copia de seguridad de mi base de datos <span style="color:blue;">revoke.demo</span>, a disco en la ruta <span style="color:blue;">C:\bd\copiarevokedemo1012.bak</span>. El nombre del conjunto de medios <span style="color:blue;"></span>revoke.demo-Full Database Backup, podeís poner el que gusteís.		</p>
+				
+					<p>Esta opción en el manager, se encuentra en botón derecho sobre base de datos, <em>tareas/task, copia de seguridad/backup</em> y tiene 2 <em>(sql 2005, 2008)</em> o tres pagínas <em>(sql 2008 r2, 2012, 2012 r2, 2014, 2016)</em>, la ventana.</p>
+					
+					<p>Pulsamos sobre el botón <span style = "color:blue;">Execute / Ejecutar</span></p>
+				
+					<p>Cuando la <span style="color:red;"> de la ventana de Mensajes/Messages</span>, sea la que indica la <span style="color:red;">flecha</span> y estemos seguros de que tenemos un archivo de copia de seguridad completa, .bak en la ruta que hemos marcado, entonces y solo entonces, continuaremos...</p>
+				
+				<h3>Borrado a lo bestia</h3>
+				
+					<p>Aquí vendrá tu script de borrado</p>
 
+					<p>Un ejemplo de borrado sobre la tabla Auditoria dejando en ella todo solo un año por el campo fecha (Datetime) </p>
+
+					<p><code><br/>delete from auditoria where fecha &lt; getdate() &#45;365<br/></code></p>
+				
+					<p>Cuando la consulta termine..... continuamos...</p>
+
+				<h3>Divorcio / separación del LDF</h3>
+				
+						<p>Antes de separar el archivo ldf de la base de datos, para su posterior eliminación tenemos que averiguar como se llaman exactamente y remarco <ins>exactamente</ins>, los 
+							archivos, porque podemos liarla parda.</p>
+				
+						<p><img src="images/archivos.JPG"/></p>
+				
+						<p>Como en la opción de la copia de seguridad, nos iremos al <strong>Object Explorer / Explorador de Objetos</strong>, botón derecho del ratón sobre nuestra base de datos, y en la página <strong>Files o Archivos</strong>, moveremos la barra de desplazamiento de la ventana, hasta el final, como <span style="color:red;">nos indica la flecha</span>, y anotaremos, <strong><ins>exactamente</ins></strong>, el nombre de <span style="color:green;">nuestra/s rutas</span> y de <span style="color:blue;">nuestros archivos</span> </p>
+						
+						<p>Con esta parte bien segura y clara, procederemos a separa la base de datos</p>
+				
+						<p><img src="images/detach.jpg"/></p>
+				
+						<p>Buscamos la separación. En el manager Castellano, será como Tareas, Separar</p>
+				
+						<p><img src="images/detach2.JPG"/></p>
+				
+						<p>He mantenido la conexión de la copia de seguridad abierta como se ve en la <span style="color:grey;">ventana</span>, para aclarar dos pequeñas, pero <strong>muy importantes </strong>, particularidades que tiene la separación.</p>
+				
+						<p>Cuando realizas una sentencia contra una base de datos, bien sea un comando, bien sea una aplicación, bien sea una web, realmente, se produce una conexión al motor de la base de datos. Esta conexión, puede permanecer abierta durante un tiempo determinado, aun cuando nosotros creamos que esta ya disponible. Con esto quiero aclarar, que por defecto, el sistema no nos va a dejar hacer cosas, si hay conexiones abiertas, porque por lógica, entiende que hay alguien haciendo algo, por tanto la seguridad, es lo primero.</p>
+				
+						<p>En la imagen disponemos de la casilla de verificación <span style="color:red;">drop o quitar</span>, que nos permite indicarle al manager, que primero cierre las conexiones y luego realice la acción solicitada. Marcaremos esta casilla</p>
+				
+						<p>En cambio, la casilla de <span style="color:green;">update o actualizar</span>, la dejaremos desmarcada, porque a posteriori realizaremos esta acción.</p>
+				
+						<p>En esta parte ya solo nos queda aceptar <span style="color:blue;">, para separar.</p>
+							
+						<p>Advertencia: Si no estas muy ducho en estas materias, y no te deja separar, es casi seguro que tu base de datos esta enganchada y que hay conexiones abiertas. Las opciones, son 	muchas, llegando a veces a tener que reiniciar incluso el servidor. Si la conexión persiste, probablemente tengas que detener el IIS, si algun programa web o página, se engancha a tu base de datos.</p>
+				
+						<p>.... por fin has llegado a separar.</p>
+					
+						<p>Como ya disponemos del <em>mdf</em>, y del <em>ldf</em> separados</p>, vamos a nuestro explorador de windows, y buscamos la ruta que antes habiamos anotado.
+				
+						<p><img src="images/archivoldf.JPG"/></p>
+					
+						<p>Renombramos el ldf, por mera seguridad, sin eliminarlo todavía.</p>
+				
+						<p><img src="images/adjuntar.jpg"/></p>
+					
+						<p>Buscamos la opción de la imágen, con el botón derecho sobre nuestras bases de datos (en castellano adjuntar).</p>
+						<p><img src="images/adjuntarPaso2.JPG"/></p>
+						
+						<p>En la ventana primera pulsamos <span style="color:blue;">Add o Añadir</span>, esto nos abrirá una ventana <span style="color:red;">nueva encima</span>, donde buscaremos nuestro archivo mdf <em>(Recordamos el nombre anotado)</em>, y pulsamos sobre <span style="color:#4C2882;">OK o Aceptar</span></p>
+				
+						<p>De vuelta a la ventana anterior, y una vez nos ha añadido el/los archivos, nos aparece la una particularidad en función de la versión que ejecutemos.</p>
+				
+						<p>Si nuestra versión es <em>2016</em>, solo nos resta aceptar, y el sistema creará el nuevo ldf, y ya estará adjuntada.</p>
+						
+						<p>Si nuestra versión es anterior <em>2005, 2008, 2008 R2, 2012, 2012 R2, 2014</em>, nos queda quitar el archivo ldf con el botón de quitar o Remove, seleccionando el archivo ldf, que el manager nos dirá no encontrado.</p>
+				
+				<h3>Comprimir y arreglar el desaguisado</h3>
+				
+						<p>Ya con la base de datos adjuntada, sin un registro grande, solo nos queda comprimir la misma y volverla lista.</p>
+				
+						<p><img src="images/reducir.jpg"/></p>
+				
+						<p>En castellano, será como Tareas, Reducir, Base de datos</p>
+				
+						<p>Con la base de datos, sin conexiones activas, y sin ldf, supongo que la reducción, aparte del tiempo no entrañará ningún problema. Caso contrario, la web esta llena de scripts, para ejecutar un Shrink Database.</p>
+				
+						<p><img src="images/reducir2.JPG"/></p>
+				
+						<p>Pulsar sobre Ok, o aceptar..... Pasado un buen rato.....</p>
+				
+				<h5>Arreglos de índices</h5>
+				
+						<p>En la última fase, vamos a ponerle la cara muy interesante, a la niña de nuestros ojos.</p>
+				
+						<p>Dos opciones, con el mismo fin. </p>
+				
+						<ul>
+							<li>Script</li>
+							<li>Manager</li>
+						</ul>
+				
+					<h4>Script</h4>
+						<p><code>use master <br/>
+										go<br/>	alter database [<span style ="color:blue;">revoke.demo</span>]<br/>set single_user with rollback immediate<br/>	go</code></p>
+				
+						<p>Cambia el <span style ="color:blue;">nombre de la base de datos</span> por el tuyo.</p>
+
+				<p>Nueva consulta en el editor con la base de datos<br/><code>use master<br/>go<br/>dbcc checkdb ([<span style ="color:blue;">revoke.demo</span>],repair_Rebuild)<br/>go</code></p>
+
+						<p>y para finalizar ponemos la base de datos, cuando la ventana de mensajes este llena de datos, como activa para multi usuarios</p>
+
+				<p><code>use master<br/>go<br/>	alter database [<span style ="color:blue;">revoke.demo</span>]<br/>set multi_user with rollback immediate<br/>go</code></p>
+				
+				<h4>Manager</h4>
+				
+					<p>Botón derecho de nuevo sobre el Explorador de objetos y nuestra base de datos de ejemplo (revoke.demo) Propiedades.</p>
+					
+					<p><img src="images/usuarioSingle.jpg"/></p>
+					
+					<p>Vamos a la página de Opciones. (En cada versión de Sql esta opción esta en un sitio diferente de la barra de desplazamiento, si bien se verá en la mima opción de Estado/Status) en <span style="color:red;">Restric Access</span>y buscamos <span style="color:blue;">MULTI_USER</span>, lo cambiamos por <span style="color:blue">SINGLE_USER</span>, y pulsamos  <span style="color:green;">OK / Aceptar</span></p>
+				
+					<p>Con todas las ventanas de consultas cerradas, pulsamos botón derecho sobre la base de datos y nueva ventana de consulta.</p>
+				
+					<p><code>use master <br/>go<br/>dbcc checkdb ([revoke.demo],repair_Rebuild)<br/>go</code></p>
+				
+					<p>Una vez termine la ventana de mensajes </p>
+
+					<p><img src="images/checkdb.JPG"/></p>
+
+					<p>Solo nos resta volver a la misma pantalla, cerrando la ventana del manager donde hemos ejecutado el script.</p>
+					<p><img src="images/cerrar.JPG"/></p>
+
+					<p>Ponemos la base de datos en acceso multiusuario</p>
+					
+					<p><img src="images/usuarioSingle.jpg"/></p>
+					
+					<p>Vamos a la página de Opciones. (En cada versión de Sql esta opción esta en un sitio diferente de la barra de desplazamiento, si bien se verá en la mima opción de Estado/Status) en <span style="color:red;">Restric Access</span>y buscamos <span style="color:blue;">SINGLE_USER</span>, lo cambiamos por <span style="color:blue">MULTI_USER</span>, y pulsamos  <span style="color:green;">OK / Aceptar</span></p>
+					
+					<p>y nuestro trabajo ha finalizado.	</p>
+				
+			</section>
+	</div>
 
 </body>
 </html>
