@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Zona Sql Server">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="../stylesheets/stylesheet.css">
+
+    <title>Javifer2.GitHub.io</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/javifer2">View on GitHub</a>
+
+          <h1 id="project_title">CursoSql 1</h1>
+          <h2 id="project_tagline">Programación Sql.</h2>
+
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+				<h3>Aprendiendo Sql a Martillazos.</h3>
+				
+					<p>Probablemente, no quizá no he comenzado bien, seguro, que no es la mejor manera de aprender <strong>SQL</strong>, pero es básicamente, la que yo he ejecutado, por tanto voy a poner encima de la mesa, todo lo que yo he aprendido en estos años, contando que quizá no es el modo más ortodoxo, seguro que no es el más eficaz, pero por supuesto con un enfoque diferente.			</p>
+				
+				<h3>La mejor manera de motivar a tu cerebro, es iniciar a la fuerza.</h3>
+					<p> Nos saltaremos toda la teoría para arrancar directamente el <strong>Sql Managment Studio.</strong></p>
+				
+					<p>Youtube esta lleno de videos para la instalación de Sql server, de un modo simple. Te recomiendo la versión 2016, sin ninguna duda, además de que es la que verás en las capturas de pantalla. Si bien podrás seguir esta serie de capítulos aunque no dispongas de esta versión.</p>
+				
+					<p>Si no estas familiarizado, la version Express es gratuita, y la puedes descargar desde por ejemplo <a href="https://www.microsoft.com/es-es/server-cloud/products/sql-server-editions/sql-server-express.aspx">Enlace a sitio de <em>Microsoft</em></a></p>
+				
+					<p>Yo trabajaré con la <em>edición Developer</em>, que no esta limitada, para desarrollos. (No observarás diferencias, salvo a lo mejor el idioma, pues mi versión está en Inglés)</p>
+				
+				<h3>Al lio.</h3>
+				
+					<p>Busca en tus programas e inicia Sql Managment Studio</p>
+					
+					<p><img src="../images/iconoManagment.JPG"/></p>
+					
+					<p>Doble click y</p>
+				
+					<p><img src="../images/splashSql.JPG"/></p>
+				
+					<p>La pantalla de inicio del <strong>Sql Managment</strong>, nos da las primeras elecciones, si bien no voy a tocar este tema ahora, hay opciones muy interesantes a detallar. Pulsa 	Connect o conectar si tu edición es castellano, y si todo va Ok, porque no te devuelve error, vamos por buen camino. </p>
+					
+					<p>La primera familiarización que tienes que tener con el Manager, es la ventana de tu izquierda (Explorador de Objetos), donde estarán situados todos los objetos, sobre los que trabajaremos, que como observarás, no es más que un mero explorador, de momento, donde podrás ir desplegando diferentes elementos.</p>
+				
+					<p><img src="../images/objectexplorer.JPG"/>	</p>
+				
+					<p>En la barra de iconos tienes un botón que se llama <strong>> Nueva Consulta o New Query</strong>. Ese es tu primer contacto. Pincha.</p>
+				
+				<h3>Primer contacto con el Editor</h3>
+				
+					<p>En la parte central, en la ventana que observarás como SqlQuery1.sql....., vamos a iniciar nuestra andadura.</p>
+				
+					<p>Primer script, copia este contenido en la ventana y pulsa el botón de <strong>Ejecutar/Execute</strong></p>
+				
+					<p><code>Create database Pruebas <br/>go</code></p>
+				
+					<p><img src="../images/script1.JPG"/></p>
+				
+					<p>Al ejecutar el script, observarás la salida de la ventana de <em>Mensajes</em> en la parte inferior. </p>
+				
+					<p>Si pulsas, ahora botón derecho, sobre el <strong>explorador de objetos</strong>, encima de <strong>databases</strong> o <strong>bases de datos</strong>, y <strong>refrescar</strong> o <strong>actualizar</strong>. Luego pulsas sobre el más y verás tu primera base de datos.</p>
+				
+					<p>El código ejecutado no distingue de mayusculas o minúsculas. Podiamos haberlo hecho como <br/>
+				<code>CrEaTe DaTaBaSe PrUeBaS<br/>Go</code><br/> y su ejecución hubiera sido la misma.</p>
+				
+				<h3>Ya tenemos base de datos, pues vamos a por la primera tabla</h3>
+				
+					<p>Pulsa Nueva consulta</p>		
+				
+					<p><code>Use Pruebas<br/>go<br/>Create Table Alumnos (<br/>Id int Primary key not null identity (1,1), <br/>Nombre varchar(50) not null, <br/>Apellido1 varchar(50) not null,<br/> Apellido2 varchar(50) not null,<br/> Direccion varchar(100) not null,<br/> Telefono varchar(20)<br/>)<br/>go</code></p>
+				
+					<p><img src="../images/createtable.jpg"/></p>
+					
+					<p>Ya tenemos nuestra primera tabla.</p>
+				
+				<h3>Última ejecución a ciegas para tener datos.</h3>	
+					
+					<p><code>Insert into Alumnos
+ (Nombre, Apellido1, 
+Apellido2, Direccion, Telefono)
+Values('Juan','Gutierrez','Pérez','C/ Camín de Ventura 33',
+'985 878 986'),
+('Juan','Gutierrez','Pérez','C/ Camín de Ventura 33',
+'985 878 986'),
+('Juan','Gutierrez','Urbano','C/ Camín de Ventura 33',
+'985 262 431'),
+('Antonio','Moreno','De Benito','C/ Camín de Ventura 31',
+'789 118 987'),
+('Toñi','Salustiano','Ochoa','C/ Camín de Ventura 29',
+'655 111 516'),
+('Ivan','Grez','Soles','C/ Otrora 48',
+'985 878 486')</code></p>
+					
+				
+					<p>Es evidente, que nos hemos saltado muchas lecciones, y hemos hecho acciones, sin conocer el alcance, pero a partir de este momento, como ya disponemos de datos, empezaremos la verdadera base de todo el Sql.</p>
+				
+				<h3>El inicio del todo.</h3>
+				
+					<p>Nueva ventana en el editor de consultas y ahora ejecutamos una <strong>Select</strong> el origen de todas las sentencias</p>
+				
+					<p><code>Select * from Alumnos</code></p>
+				
+					<p> Como puedes observar, <strong>SELECT</strong>, es la sentencia reservada en Sql server para obtener datos. Dado que el SQL, es el lenguaje de acceso a la información de la base de datos, es de recibo entender que esta es la sentencia más usada.</p>
+				
+					<p>El <strong>*</strong> viene a decir que queremos todos los campos que anteriormente hemos creado, <strong>from </strong>desde su orígen, <strong>Alumnos</strong>, que es la tabla que habíamos creado.</p>
+				
+					<img src="../images/resultados.JPG"/>
+				
+					<p>En conclusión, hemos creado una base de datos, una tabla, rellenado con datos la misma, y ahora obtenemos sus resultados.</p>
+				
+				<h3><a href="../index.html">volver</a></h3>
+
+
+	
+
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
