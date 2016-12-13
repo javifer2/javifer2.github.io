@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Zona Sql Server">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="../stylesheets/stylesheet.css">
+
+    <title>Javifer2.GitHub.io</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/javifer2">View on GitHub</a>
+
+          <h1 id="project_title">CursoSql</h1>
+          <h2 id="project_tagline">Conexión</h2>
+
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+			<section id="main_content" class="inner">
+				<h3>Conexión al motor de la Base de Datos</h3>
+				
+					<p>Para conectarse a la base de datos, bien sea porque es tu primera vez, o bien sea porque tienes problemas, en este capítulo, vamos a mostrar más detalladamente todas las opciones posibles.</p>
+				
+					<p>Lo primero es buscar entre tus programas, el icono de <strong>Microsoft Sql Managment Studio</strong>.<br/><em>En la versión 2016 <ins>ya no viene integrado</ins> en la instalación, es una herrammienta aparte que hay que descargarse e instalar.</em> Aquí dispones de un vínculo al sitio de Microsoft. <a href="https://msdn.microsoft.com/es-es/library/mt238290.aspx">Descargar Microsoft Sql Managment Studio</a></p>
+				
+					<p>Una vez has encontrado la herramienta. Puedes ejecutarla.</p>
+				
+					<p><img src="../images/splashSql.JPG"/></p>
+				
+					<p>La ventana de conexión al motor dispone de varias opciones.</p>
+				
+					<p>El primer combo, que aparecerá marcado como <strong>Database Engine</strong> o <strong>Motor de Base de datos</strong>, nos da a escoger entre el motor y la versión compact, que es la versión de motor de Microsoft integrada para que los desarrolladores compilen sitios ASP y aplicaciones de escritorio.</p>
+				
+					<p>En nuestro caso, queremos conectarnos al motor, por tanto dejamos el combo en <strong>Database Engine</strong></p>
+					
+					<p>El segundo combo, donde se puede escribir un nombre, o seleccionar lo que aparece, o buscar <strong>local</strong> o <strong>...más</strong>, nos da nuestro nombre de instancia <ins>instancia*</ins> de Sql.</p> 
+				<dl>
+					<dt style = "color:red;">*Instancia</dt>
+					<dd>Es una copia del ejecutable, que corre como un servicio del sistema. Cada instancia tiene asociadas diferentes bases de datos.</dd>
+				</dl>
+				
+					<p><span style="vertical-align: super; color:red;">1</span> Por tanto es un concepto muy importante a tener en cuenta. Podemos tener instaladas en la misma maquina diferentes instancias de base de datos, y de diferentes versiones. Cada una tendrá sus bases de datos.</p>
+				
+					<p>Si en el campo <strong>Server Name</strong> o <strong>Nombre de Servidor</strong>, desplegándolo, en la opción de <strong>...buscar más</strong> o <strong>&lt;browse for 			more...&gt;</strong> nos mostrará la ventana:</p>
+				
+					<p><img src="../images/buscarserver.JPG"/></p>
+				
+					<p>En rojo estan márcadas las opciones de servidor local, que se refiere a las instancias<span style="vertical-align: super; color:red;">1</span> instaladas en nuestro ordenador. Si cambiamos a la <span style="color:blue;">otra pestaña</span>, podemos obtener las instancias de nuestra red local. Esta acción nos permitirá trabajar desde nuestro Manager, contra otro ordenador de nuestra red, como si estuviesemos directamente en el, siempre que dispongamos de permisos. En mi caso, desplegando en el más mis instancias locales, he encontrado dos instalaciones, una llamada <em>&#34;ESQUINERO&#34;</em>, que corresponde con una edición de <em>2016</em>, y la <em>&#34;ESQUINERO\SQLEXPRESS&#34;</em>, que corresponde con la edición 2014.</p>
+				
+					<p>Cuando hayamos aceptado, bien sea en nuestra Instancia local, que parece de momento lo más apropiado, bien sea en otra instancia de red, volvemos a la pantalla de autenticación.</p>
+				
+					<p>El desplegable de nombre <em>Autenticacion</em> o <em>Autentication</em>, por defecto nos muestra <strong>Windows Autentication</strong>, y al menos <strong>Sql Server Autenticacion</strong>. En las versiones anteriores a 2016, estas eran las opciones. En 2016 la integración con el Directorio Activo es total, lo que nos da más opciones, de autenticación a través de usuarios registrados en nuestro dominio. Dado que no trataremos temas del directorio activo, no considero necesario tocar más este tema.<a href="https://msdn.microsoft.com/es-es/library/ms189721.aspx"> Enlace a sitio de Microsoft con datos sobre la conexión.</a></p>
+				
+					<p>Si hemos escogido <strong> Windows Authentication</strong>, pulsamos sobre <em>conectar</em>. Si en la instalación la hemos realizado con este usuario y no hemos marcado el <em>modo mixto</em>, estaremos dentro. Si hemos optado por el modo mixto, y no hemos agregado al usuario actual, nos mostrará un error. Si disponemos del usuario <strong>sa</strong> y su contraseña podemos optar por el modo <em>Sql server</em>.</p>
+				
+					<p>Espero que no hayas tenido problemas con la validación. Si no lo has conseguido, recoge el número de error, y busca en la web de Microsoft.</p>
+				
+				
+				
+				
+				
+			
+				
+					
+			
+			</section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>

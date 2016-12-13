@@ -288,7 +288,7 @@ Full-Width Styles
 
 .inner {
   position: relative;
-  max-width: 640px;
+  max-width: 1024px;
   padding: 20px 10px;
   margin: 0 auto;
 }
@@ -443,5 +443,9 @@ Small Device Styles
     max-width: 480px;
     font-size: 11px;
   }
+	
+	.rojo{
+		color : red;	
+	}
 
 }
