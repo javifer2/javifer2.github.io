@@ -31,11 +31,52 @@
 				
 					<p>El inicio de todas las lecciones, se realizará con la base de datos ya conectada como ya hemos visto. Si tienes algún problema sigue este nuevo manual. <a target="_blank" href="conexion.html">Página de conexión</a></p>
 				
-					
-					
 					<p>La instrucción <strong>select</strong>, nos permite recuperar información de nuestras tablas de forma simple.</p>
 				
 					<p>En el capítulo 1 vimos como se hacia un <code>Select * from Alumnos</code>, y nos devolvía una rejilla en formato tabular con nuestros resultados.</p>
+				
+					<p>Ahora nos toca trabajar un poquito con el editor, o al menos, ver sus particularidades, para poder empezar.</p>
+					<p id="exploradorobjetos"><img src="../images/ManagerCompleto.JPG"/></p>
+				
+					<p>En la zona del <span style="color;green;">explorador de objetos</span>, observamos la base de datos de <strong>Pruebas</strong>, la tabla <strong>Alumnos</strong>, y el contenido de la misma (<strong>sus campos</strong>).Desde el explorador de objetos, se puede llegar a casi todo. Es hiperimportante. Lo irás descrubiendo....</p>
+				
+				<p>El <span style="color;green;">editor de consultas</span>, o nuestra area de trabajo. Ahi será nuestro curro..... <em>Mucho cuidado, porque si tienes seleccionado un texto como en la imágen, y pulsas <strong>Execute&#92;Ejecutar</strong>, el Sistema, lo hará, pero solo ejecutará el texto que tengas seleccionada.</em> En mi caso, ha ejecutado la consulta SELECT * FROM ALUMNOS.</p>
+				
+				<p>Gracias a la ejecución de la misma, obtenemos en la <span style="color:blue;">ventana de resultados</span>, el contenido de lo pedido.</p>
+				
+				<p>Y además la <span style="color:brown;">información adicional</span>, nos cuenta, que se han obtenido en 0 segundos, 6 registros.</p>
+				
+					<p>Todas las instrucciones que pongamos en el editor, se pueden ejecutar por bloques, terminando la instrucción con la sentencia GO</p>
+				
+				<p>Prueba lo siguiente, en una ventana nueva del editor (<strong>New Query</strong> o <strong>Nueva Consulta</strong>)</p>
+				
+				<p><code>select * from Pruebas.dbo.alumnos<br/>go<br/>select * from Pruebas.dbo.alumnos<br/>go<br/>select * from Pruebas.dbo.alumnos<br/>go</code></p>
+				
+				<p><strong>Execute\Ejecutar</strong></p>
+				
+				<p><img src="../images/bloques.JPG"/></p>
+				
+				<p>El resultado es que la sentencia se ha ejecutado 3 veces, en tres bloques diferentes.</p>
+				
+				<p>Ahora ejecuta solo 1 bloque....<code>SELECT * FROM PRUEBAS.DBO.ALUMNOS<BR/>GO</code><br/>, habiendo mantenido la selección de texto. Y el resultado es un solo bloque.
+				</p>
+				
+				<p><img src="../images/bloque1.JPG"/></p>
+				
+				<p>Por tanto, ten cuidado siempre con el texto que tienes seleccionado, ya que cuando ejecutes un borrado, o una actualización de datos, si la exclusión no esta marcada, lo hará sobre todos los datos.</p>
+				
+			
+				<h3>Empezamos.....</h3>
+				
+				<p>Hemos creado la tabla <strong>Alumnos</strong>, que como puedes ver en el <a href="#exploradorobjetos">explorador de objetos</a>, contiene 6 columnas.</p>
+				
+				<p>Dado que cada una de las columnas de <strong>Alumnos</strong>, se puede referenciar por su nombre, y si son más de una se utiliza el carácter <strong>,</strong>, la pregunta es <strong>¿Dame todos los nombres y direcciones de la tabla Alumnos?</strong>	</p>
+				<hr/>
+				<p><span style="color:#f2f2f2;">SELECT NOMBRE, DIRECCION FROM ALUMNOS</span></p>
+				<hr/>
+				<p>Para ver la solución, selecciona el texto entre las dos rayas</p>
+				
+				<h3><a href="../zonasql.html">volver</a></h3>
 			
 			</section>
     </div>
