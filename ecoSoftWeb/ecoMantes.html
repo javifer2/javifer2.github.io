@@ -1,0 +1,332 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>eco Mantes</title>
+		<link rel="stylesheet" type="text/css" media="screen" href="../stylesheets/stylesheetecoSoftWeb.css">
+</head>
+<body>
+<div id="contenedor">
+	<div id="cabecera">
+		<h1 class="blanco" >ecoSoftWeb</h1>
+	</div>
+		<div id="cuerpo">
+			<!--lateral izquierdo-->
+			
+			<div id="lateral">
+				<ol>
+					<li>Sección 1</li>
+				</ol>
+			</div>
+			
+
+		<!--Cuerpo central-->
+			<div id="principal">
+					
+					<h2>Par&aacute;metros</h2>
+						<ul id="menuInicial">
+							<li><dl><dt>A</dt><dd><a href="#insertar">Inserci&oacute;n</a></dd></dl></li>
+							<li><dl><dt>D</dt><dd><a href="#borrar">Borrado</a></dd></dl></li>
+							<li><dl><dt>F</dt><dd><a href="#filtrar">Filtrar</a></dd></dl></li>
+							<li><dl><dt>F_Pag</dt><dd><a href="#filpag">Filtrar Paginado</a></dd></dl></li>
+							<li><dl><dt>M</dt><dd><a href="#modificar">Modificar</a></dd></dl></li>
+							<li><dl><dt>Max</dt><dd><a href="#max">Registro último</a></dd></dl></li>
+							<li><dl><dt>T</dt><dd><a href="#obtener">Obtener Uno</a></dd></dl></li>
+							<li><dl><dt>TT</dt><dd><a href="#obtenertodos">Obtener Todos</a></dd></dl></li>
+							<li><dl><dt>TT_Pag</dt><dd><a href="#obtenertpag">Obtener Todos Paginado</a></dd></dl></li>
+							<li><dl><dt>TT_Tipo</dt><dd><a href="#obtenertipo">Obtener Todos Tipo</a></dd></dl></li>
+						</ul>
+					<h5 id="insertar">A .- Insercci&oacute;n	</h5>
+						<p>El procedimiento de Insercci&oacute;n recibir&aacute; los siguientes par&aacute;metros:</p>
+						<pre>
+			@PKEY int,
+			@DESCRIPCION varchar(200),
+			@PADRE int,
+			@POSICION int,
+			@ICONO varchar(200),
+			@VISIBLE bit,
+			@HIJO bit,
+			@SEPARADOR bit,
+			@TEXTO_ALTERNATIVO varchar(200),
+			@MANTE_DESTIN int,
+			@TIPO bit,
+			@BBDD varchar(60),
+			@USUARIO_SQL varchar(50),	          
+			@SISTEMA_OPERATIVO VARCHAR(200),
+			@NAVEGADOR VARCHAR(200),
+			@VERSION_NAVEGADOR VARCHAR(50),
+			@IP_LOCAL VARCHAR(27),In
+			@IP_EXTERNA VARCHAR(27),
+			@IP_DOMINIO VARCHAR(27),
+			@IP_SERVIDOR_WEB VARCHAR(27),
+			@PKEY_ERROR INT OUTPUT,
+			@METODO VARCHAR(100),
+			@ACCION INT,
+			@FECHA DATETIME,
+			@PARAMETROS_XML XML,
+			@PKEY_ORIGEN INT,
+			@ROL INT,
+			@USUARIO INT,
+			@ID_CLIENTE INT,
+			@PROCEDIMIENTO_ALMACENADO VARCHAR(200)
+						</pre>
+							<p><a href="#menuInicial">Subir</a></p>
+				
+				
+					<h5 id="borrar">D .- Borrar</h5>
+						<p>El procedimiento de Borrado recibir&aacute; los siguientes par&aacute;metros:</p>
+						<pre>
+			@PKEY INT,
+			---auditoria web
+			@BBDD varchar(60),
+			@USUARIO_SQL varchar(50),	          
+			@SISTEMA_OPERATIVO VARCHAR(200),
+			@NAVEGADOR VARCHAR(200),
+			@VERSION_NAVEGADOR VARCHAR(50),
+			@IP_LOCAL VARCHAR(27),
+			@IP_EXTERNA VARCHAR(27),
+			@IP_DOMINIO VARCHAR(27),
+			@IP_SERVIDOR_WEB VARCHAR(27),
+			@PKEY_ERROR INT OUTPUT,
+			@METODO VARCHAR(100),
+			@ACCION INT,
+			@FECHA DATETIME,
+			@PARAMETROS_XML XML,
+			@PKEY_ORIGEN INT,
+			@ROL INT,
+			@USUARIO INT,
+			@ID_CLIENTE INT,
+			@PROCEDIMIENTO_ALMACENADO VARCHAR(200)
+						</pre>
+						<p><a href="#menuInicial">Subir</a></p>
+				
+				
+					<h5 id="filtrar">F .- Filtrar	</h5>
+						<p>El procedimiento de Filtrar recibir&aacute; los siguientes par&aacute;metros:</p>
+						<pre>
+			@PKEY_INICIAL INT,
+			@PKEY_FINAL INT,
+			@DESCRIPCION nvarchar (100),
+			@TIPO BIT,
+			-- lo relativo a la auditoria
+			@BBDD varchar(60),
+			@USUARIO_SQL varchar(50),	          
+			@SISTEMA_OPERATIVO VARCHAR(200),
+			@NAVEGADOR VARCHAR(200),
+			@VERSION_NAVEGADOR VARCHAR(50),
+			@IP_LOCAL VARCHAR(27),
+			@IP_EXTERNA VARCHAR(27),
+			@IP_DOMINIO VARCHAR(27),
+			@IP_SERVIDOR_WEB VARCHAR(27),
+			@PKEY_ERROR INT OUTPUT,
+			@METODO VARCHAR(100),
+			@ACCION INT,
+			@FECHA DATETIME,
+			@PARAMETROS_XML XML,
+			@PKEY_ORIGEN INT,
+			@ROL INT,
+			@USUARIO INT,
+			@ID_CLIENTE INT,
+			@PROCEDIMIENTO_ALMACENADO VARCHAR(200)
+						</pre>
+						<p><a href="#menuInicial">Subir</a></p>
+
+					<h5 id="filpag">F_Pag .- Filtrar Paginado</h5>
+						<p>El procedimiento de Filtrar Paginado recibir&aacute; los siguientes par&aacute;metros:</p>
+						<pre>
+			@NUM_PAGINA INT,
+			@TAM_PAGINA INT,
+			@NIVEL_CONTROL INT,
+			@PKEY_INICIAL INT,
+			@PKEY_FINAL INT,
+			@DESCRIPCION nvarchar (100),
+			@TIPO BIT,
+			-- lo relativo a la auditoria
+			@BBDD varchar(60),
+			@USUARIO_SQL varchar(50),	          
+			@SISTEMA_OPERATIVO VARCHAR(200),
+			@NAVEGADOR VARCHAR(200),
+			@VERSION_NAVEGADOR VARCHAR(50),
+			@IP_LOCAL VARCHAR(27),
+			@IP_EXTERNA VARCHAR(27),
+			@IP_DOMINIO VARCHAR(27),
+			@IP_SERVIDOR_WEB VARCHAR(27),
+			@PKEY_ERROR INT OUTPUT,
+			@METODO VARCHAR(100),
+			@ACCION INT,
+			@FECHA DATETIME,
+			@PARAMETROS_XML XML,
+			@PKEY_ORIGEN INT,
+			@ROL INT,
+			@USUARIO INT,
+			@ID_CLIENTE INT,
+			@PROCEDIMIENTO_ALMACENADO VARCHAR(200)	
+						</pre>
+					<p><a href="#menuInicial">Subir</a></p>
+				
+					<h5 id="modificar">M .- Modificar</h5>
+						<p>El procedimiento de Modificar recibir&aacute; los siguientes par&aacute;metros:</p>
+					<pre>
+			@PKEY int,
+			@DESCRIPCION varchar(200),
+			@PADRE int,
+			@POSICION int,
+			@ICONO varchar(200),
+			@VISIBLE bit,
+			@HIJO bit,
+			@SEPARADOR bit,
+			@TEXTO_ALTERNATIVO varchar(200),
+			@MANTE_DESTIN int,
+			@TIPO bit,
+
+					-- lo relativo a la auditoria
+			@BBDD varchar(60),
+			@USUARIO_SQL varchar(50),	          
+			@SISTEMA_OPERATIVO VARCHAR(200),
+			@NAVEGADOR VARCHAR(200),
+			@VERSION_NAVEGADOR VARCHAR(50),
+			@IP_LOCAL VARCHAR(27),
+			@IP_EXTERNA VARCHAR(27),
+			@IP_DOMINIO VARCHAR(27),
+			@IP_SERVIDOR_WEB VARCHAR(27),
+			@PKEY_ERROR INT OUTPUT,
+			@METODO VARCHAR(100),
+			@ACCION INT,
+			@FECHA DATETIME,
+			@PARAMETROS_XML XML,
+			@PKEY_ORIGEN INT,
+			@ROL INT,
+			@USUARIO INT,
+			@ID_CLIENTE INT,
+			@PROCEDIMIENTO_ALMACENADO VARCHAR(200)	
+					</pre>
+					<p><a href="#menuInicial">Subir</a></p>
+				
+				
+				<h5 id="max">Max .- M&aacute;ximo Registro</h5>
+					<p>El procedimiento de Registro Máximo no recibe par&aacute;metros</p>
+					<p>No genera registro en auditoria. No devuelve información de error de sentencia directamente de la base de datos.</p>
+					<p><a href="#menuInicial">Subir</a></p>
+				
+				<h5 id="obtener">T .- Obtener un Registro espec&iacute;fico</h5>
+					<p>El procedimiento de Obtener recibir&aacute; los siguientes par&aacute;metros:</p>
+					<pre>
+			@PKEY int,
+				-- lo relativo a la auditoria
+			@BBDD varchar(60),
+			@USUARIO_SQL varchar(50),	          
+			@SISTEMA_OPERATIVO VARCHAR(200),
+			@NAVEGADOR VARCHAR(200),
+			@VERSION_NAVEGADOR VARCHAR(50),
+			@IP_LOCAL VARCHAR(27),
+			@IP_EXTERNA VARCHAR(27),
+			@IP_DOMINIO VARCHAR(27),
+			@IP_SERVIDOR_WEB VARCHAR(27),
+			@PKEY_ERROR INT OUTPUT,
+			@METODO VARCHAR(100),
+			@ACCION INT,
+			@FECHA DATETIME,
+			@PARAMETROS_XML XML,
+			@PKEY_ORIGEN INT,
+			@ROL INT,
+			@USUARIO INT,
+			@ID_CLIENTE INT,
+			@PROCEDIMIENTO_ALMACENADO VARCHAR(200)
+					</pre>
+					<p><a href="#menuInicial">Subir</a></p>
+				
+				
+				<h5 id="obtenertodos">TT .- Obtener Todos los Registros</h5>
+					<p>El procedimiento de Obtener Todos recibir&aacute; los siguientes par&aacute;metros:</p>
+					<pre>
+					-- lo relativo a la auditoria
+			@BBDD varchar(60),
+			@USUARIO_SQL varchar(50),	          
+			@SISTEMA_OPERATIVO VARCHAR(200),
+			@NAVEGADOR VARCHAR(200),
+			@VERSION_NAVEGADOR VARCHAR(50),
+			@IP_LOCAL VARCHAR(27),
+			@IP_EXTERNA VARCHAR(27),
+			@IP_DOMINIO VARCHAR(27),
+			@IP_SERVIDOR_WEB VARCHAR(27),
+			@PKEY_ERROR INT OUTPUT,
+			@METODO VARCHAR(100),
+			@ACCION INT,
+			@FECHA DATETIME,
+			@PARAMETROS_XML XML,
+			@PKEY_ORIGEN INT,
+			@ROL INT,
+			@USUARIO INT,
+			@ID_CLIENTE INT,
+			@PROCEDIMIENTO_ALMACENADO VARCHAR(200)
+				</pre>
+				<p><a href="#menuInicial">Subir</a></p>
+				
+				
+					<h5 id="obtenertpag">TT_Pag .- Obtener Todos los Registros Paginados</h5>
+						<p>El procedimiento de Obtener Todos Paginado recibir&aacute; los siguientes par&aacute;metros:</p>
+				<pre>
+			@NUM_PAGINA INT,
+			@TAM_PAGINA INT,
+			@NIVEL_CONTROL INT,
+
+				-- lo relativo a la auditoria
+			@BBDD varchar(60),
+			@USUARIO_SQL varchar(50),	          
+			@SISTEMA_OPERATIVO VARCHAR(200),
+			@NAVEGADOR VARCHAR(200),
+			@VERSION_NAVEGADOR VARCHAR(50),
+			@IP_LOCAL VARCHAR(27),
+			@IP_EXTERNA VARCHAR(27),
+			@IP_DOMINIO VARCHAR(27),
+			@IP_SERVIDOR_WEB VARCHAR(27),
+			@PKEY_ERROR INT OUTPUT,
+			@METODO VARCHAR(100),
+			@ACCION INT,
+			@FECHA DATETIME,
+			@PARAMETROS_XML XML,
+			@PKEY_ORIGEN INT,
+			@ROL INT,
+			@USUARIO INT,
+			@ID_CLIENTE INT,
+			@PROCEDIMIENTO_ALMACENADO VARCHAR(200)		
+				</pre>
+				<p><a href="#menuInicial">Subir</a></p>
+				
+				<h5 id="obtenertipo">TT_Pag .- Obtener Todos los Registros Paginados por Tipo</h5>
+						<p>El procedimiento de Obtener Todos Paginado recibir&aacute; los siguientes par&aacute;metros:</p>
+							<pre>
+			@TIPO BIT,
+
+			-- lo relativo a la auditoria
+			@BBDD varchar(60),
+			@USUARIO_SQL varchar(50),	          
+			@SISTEMA_OPERATIVO VARCHAR(200),
+			@NAVEGADOR VARCHAR(200),
+			@VERSION_NAVEGADOR VARCHAR(50),
+			@IP_LOCAL VARCHAR(27),
+			@IP_EXTERNA VARCHAR(27),
+			@IP_DOMINIO VARCHAR(27),
+			@IP_SERVIDOR_WEB VARCHAR(27),
+			@PKEY_ERROR INT OUTPUT,
+			@METODO VARCHAR(100),
+			@ACCION INT,
+			@FECHA DATETIME,
+			@PARAMETROS_XML XML,
+			@PKEY_ORIGEN INT,
+			@ROL INT,
+			@USUARIO INT,
+			@ID_CLIENTE INT,
+			@PROCEDIMIENTO_ALMACENADO VARCHAR(200)
+							</pre>
+				<p><a href="#menuInicial">Subir</a></p>
+				
+			</div>
+		</div>
+	<div id="pie">
+	</div>
+</div>
+
+
+</body>
+</html>
