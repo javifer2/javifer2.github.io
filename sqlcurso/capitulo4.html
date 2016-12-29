@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Zona Sql Server">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="../stylesheets/stylesheet.css">
+
+    <title>Javifer2.GitHub.io</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/javifer2">View on GitHub</a>
+
+          <h1 id="project_title">CursoSql 1</h1>
+          <h2 id="project_tagline">A workear con la Instrucci&oacute;n Select</h2>
+
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+			<section id="main_content" class="inner">
+				<h3>SELECT o la Diosa de todas las cosas</h3>
+					<p>No se si el tratamiento es femenino o m&aacute;sculino, pero como dicen los <strong>Englishparlantes</strong>, <a href="conexion.html"><em>SiQiuEl Server</em> y a iniciar.</a></p>
+				
+					<p>Lo primero será conectarnos a nuestra base de datos de pruebas, y establecer una ventana para una nueva consulta en el Manager. Si no lo recuerdas, desde este enlace puedes ir al <a href="capitulo1.html">Cap&iacute;tulo 1</a></p>
+				
+				<h3>Pr&oacute;ologo</h3>
+					<p>La sintaxis b&aacute;sica de una sentencia <strong>SELECT</strong>, es tal que así:
+					</p>
+				
+					<p><code>SELECT * FROM ALUMNOS WHERE ID > 1</code></p>
+				
+					<p>Donde lo primero siempre es el comando a ejecutar, despues sobre que columnas de la base de datos, luego la <strong>Clausula</strong>, para delimitar sobre quien o quienes son las tablas para obtener resultados. Posteriormente el criterio de exclusión</p>
+				
+					<p>Seg&uacute;n se avanza con las sentencias, cada vez se va a complicar m&aacute;s. Pero ya que estamos de faena:</p>
+					
+					<blockquote>Escribe una sentencia que busque los alumnos que tengan un Id mayor que 3, y que devuelva su Nombre y primer Apellido exclusivamente</blockquote>
+					
+					<hr/>
+					<p><span style="color:#f2f2f2;">SELECT NOMBRE, APELLIDOS FROM ALUMNOS;</span></p>
+					
+					<hr/>
+					<p>Para ver la solución, selecciona el texto entre las dos rayas</p>
+				
+					<p>Recuerda que las sentencias no se tienen porque escribir en una sola linea. Además no tienen porque ser en mayusculas, Y aunque no es obligatorio, se suele terminar con punto y coma</p>
+				
+					<blockquote>Necesito una lista de tel&eacute;fonos de los usuarios que se llaman &#39;Juan&#39;</blockquote>
+				
+					<hr/>
+					<p><span style="color:#f2f2f2;">SELECT telefono FROM ALUMNOS where Nombre = 'Juan';</span></p>
+					<hr/>
+					<p>otra opci&oacute;n</p>
+					<hr/>
+					<p><span style="color:#f2f2f2;">SELECT TEleFOno FROM ALUMNOS where Nombre LIKE 'JUan';</span></p>
+					<hr/>
+				
+					<p>Como habr&aacute;s observado, es indiferente a este respecto las comparaciones con igual o con Like, pero cuidado, no son iguales ni mucho menos. Los textos se pueden comparar y hay unas cuantas cosas a tener en cuenta. F&iacute;jate en lo que vamos a realizar y compara los resultados.</p>
+				
+					<p>Ejecuta la siguiente insert</p>
+					<pre>
+INSERT INTO ALUMNOS VALUES 
+('Roberta', 'FELINI','RioPedre',' ','200 115656'),
+('Marisa', 'Fernández','Rio',' ','16516511'),
+('Fernando', 'García','Serte','','5645 849'),
+('Lusina', 'García','Vacas','','561315'),
+('Mª del Carmen', 'FELINI','Austricla','C/ Wenceslao ','200 3216556'),
+('ANA', 'Fernández','Jonhson',' C/ lao de mujeres','200 654894998'),
+('Silvia', 'Solera','Susto','C/ Olivares 12','200 1156564566948'),
+('Jerónimo', 'Zubiri','oni1sa','Pz Jeminio','200 weew'),
+('Sebas', 'Fieltro','col','Camin de las magdalenas','333333115656'),
+('Sedrick', 'Fernández','Vázquez','sin especificar.','2342321'),
+('Noa', 'Ferdesa','Bahamonde','...','7987987'),
+('Pepa', 'Martínez','Repulo','Jose Torcuato',' '),
+('Clara', 'Fernández','Cortés','Pz Castilla','98789987'),
+('Alina', 'Garcia','Semprún','Avda. Portugal','6251565489'),
+('Alonso', 'Gracia','Siempre','Primera General','625 156 487'),
+('Jimeno', 'Ostore','Santos','Capitán Melchor','635465498'),
+('Benita', 'Gra','Ojeda','Avd. Príncipe de Asturias','79879879'),
+('Maria Azucena', 'Izquierdo','Redre','San pozuelo','200');</pre>
+					<p></p>
+				
+					<blockquote>Necesito una lista de nombre, apellido1, apellido2, direccion y tel&eacute;fono de los usuarios que se llaman &#39;Juan&#39; y se apellidan P&eacute;rez</blockquote>
+					<hr/>
+					<p><span style="color:#f2f2f2;">SELECT NOMBRE, APELLIDO1, APELLIDO2, DIRECCION, TELEFONO FROM ALUMNOS WHERE NOMBRE LIKE 'JUan' AND APELLIDO2 LIKE 'Pérez';</span></p>
+					<hr/>
+
+				<p>Bien, como ves no ha sido muy dif&iacute;cil. Vamos a subir un pelda&#241;o:</p>
+						<blockquote>Necesito una lista de apellido2, id, direccion, id, apellido1, id y tel&eacute;fono de los usuarios que se llaman &#39;Juan&#39; y se apellidan P&eacute;rez o se apelliden Rio</blockquote>
+				
+				<hr/>
+					<p><span style="color:#f2f2f2;">SELECT APELLIDO2, ID, DIRECCION, ID, APELLIDO1, ID, TELEFONO FROM ALUMNOS 
+WHERE (NOMBRE LIKE 'Juan' AND APELLIDO2 LIKE 'Pérez') 
+OR
+(APELLIDO2 LIKE 'RIO');</span></p>
+				<hr/>
+					<p>Empezamos a jugar, con los par&eacute;ntesis, y con las columnas.</p>
+						
+						<blockquote>Ahora vas a probar una de las diferencias de <strong>=</strong> y <strong>Like</strong>: ¿Qui&eacute;n vive en la direcci&oacute;n igual a espacio?</blockquote>
+
+					<hr/>
+				
+					<hr/>
+					<p><span style="color:#f2f2f2;">SELECT * FROM ALUMNOS  WHERE DIRECCION LIKE ' '</span></p>
+					<p><span style="color:#f2f2f2;">2 registros: Roberta y Marisa</span></p>
+				
+					<p><span style="color:#f2f2f2;">SELECT * FROM ALUMNOS  WHERE DIRECCION = ' '</span></p>
+					<p><span style="color:#f2f2f2;">4 registros: Los dos anteriores y Fernando y Luisina</span></p>
+					<p>Cuando uses cadenas por defecto utiliza el operador de comparaci&oacute;n <strong>LIKE</strong>. Utiliza el operador <strong>=</strong>, para n&uacute;meros</p>
+				
+					<hr/>
+				
+			<h3><a href="../zonasql.html">volver</a></h3>
+			
+			</section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
