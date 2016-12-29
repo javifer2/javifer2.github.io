@@ -117,6 +117,22 @@ OR
 				
 					<hr/>
 				
+				<h3>Inclusi&oacute;n de expresiones</h3>
+					<p>Se pueden devolver expresiones formadas como campos de una tabla o mejor dicho de una consulta, incluyendo las mismas separadas por ap&oacute;strofes.</p>
+					<p>El planteamiento es que necesito esta lista en el siguiente formato.</p>
+					<ul>
+						<li>Fernández - Rio, Marisa</li>
+						<li>Fernández - Jonhson, Ana</li>
+						<li>Fernández - V&aacute;zquez, Sedrick</li>
+						<li>Ferdesa - Bahamonde, Noa</li>
+						<li>Fernández - Cort&eacute;s, Clara</li>
+					</ul>
+				
+					<hr/>
+					<p><span style="color:#f2f2f2;">select APELLIDO1 + '-'+ APELLIDO2 + ', '+ NOMBRE from ALUMNOS where APELLIDO1 like 'Fernández' OR ID=17</span></p>
+					<hr/>
+					
+				<p>El concepto <strong>expresi&oacute;n</strong> en SQL, abarca muchas posibilidades.</p>
 			<h3><a href="../zonasql.html">volver</a></h3>
 			
 			</section>
