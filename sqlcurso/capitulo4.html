@@ -27,8 +27,10 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
 			<section id="main_content" class="inner">
+				<h6>En esta lección y en las siguientes, utilizaremos <strong>Select</strong> con las clausulas <strong>FROM WHERE </strong>y <strong>ORDER BY</strong>, y todos los operadores l&oacute;gicos y de comparaci&oacute;n que has visto en el <a href="capitulo3.html">cap&iacute;tulo referido a dml</a> </h6>
 				<h3>SELECT o la Diosa de todas las cosas</h3>
-					<p>No se si el tratamiento es femenino o m&aacute;sculino, pero como dicen los <strong>Englishparlantes</strong>, <a href="conexion.html"><em>SiQiuEl Server</em> y a iniciar.</a></p>
+					
+					<p>No se si el tratamiento es femenino o m&aacute;sculino, pero como dicen los <strong>Englishparlantes</strong>, <a href="conexion.html"><em>SiQuAl Server</em> y a iniciar.</a></p>
 				
 					<p>Lo primero será conectarnos a nuestra base de datos de pruebas, y establecer una ventana para una nueva consulta en el Manager. Si no lo recuerdas, desde este enlace puedes ir al <a href="capitulo1.html">Cap&iacute;tulo 1</a></p>
 				
@@ -132,7 +134,33 @@ OR
 					<p><span style="color:#f2f2f2;">select APELLIDO1 + '-'+ APELLIDO2 + ', '+ NOMBRE from ALUMNOS where APELLIDO1 like 'Fernández' OR ID=17</span></p>
 					<hr/>
 					
-				<p>El concepto <strong>expresi&oacute;n</strong> en SQL, abarca muchas posibilidades.</p>
+					<p>El concepto <strong>expresi&oacute;n</strong> en SQL, abarca muchas posibilidades.</p>
+				
+					<p>Como has observado, podemos concatenar los campos, repetirlos, colocarlos en cualquier orden, sumarlos alguna expresi&oacute;n. Puedes probar m&aacute;s combinaciones.</p>
+					<dl>
+							<dt>Busca todos los registros cuyo tel&eacute;fono sea mayor que 561.</dt>
+								<dd>14 Rows</dd>
+							<dt>Busca todos los registros cuya direcci&oacute;n sea la misma que la del registro de ID 1</dt>
+								<dd>3 Rows</dd>
+							<dt>Busca todos apellidos de los clientes cuyos registros cuyo tel&eacute;fono ID sea mayor que 5 y su direccion sea como ...</dt>
+								<dd>1 Rows</dd>
+							<dt>Puedes obtener una lista tal que: Garc&iacute;a Vacas, Luisina pero de todos los registros incluyendo la coma como separador.</dt>
+								<dd>24 Rows</dd>
+							<dt>Puedes obtener una lista tal como la anterior: Garc&iacute;a Vacas, Luisina pero de todos los registros numerados y separados por punto y gui&oacute;n, parecido a la rejilla de resultados</dt>
+								<dd>24 Rows</dd>
+					</dl>
+				
+					<h3>Responder a las preguntas, y separar lo que nos piden, son los primeros requisitos.</h3>
+				
+						<p>Supongo, que como en todo la ciencia esta en hacer las preguntas apropiadas.</p>
+						<p>En <strong>SQL</strong>, tambi&eacute;n. Algunas de las preguntas son claras, pero importa mucho el orden de ellas.</p>
+						<p>La primera pregunta <strong>Qui&eacute;n</strong>, nos va a dar nuestros datos</p>
+						<p>La siguiente puede ser <strong>Cu&aacute;les</strong> son las condiciones.</p>
+						<p>Y <strong>C&oacute;</strong>mo los presentamos.</p>
+						<p>No te centres en las preguntas, pues es l&eacute;xico. El asunto es comprender el modo de actuaci&oacute;n</p>
+				
+					<h3>La primera pregunta que nos tenemos que hacer </h3>
+					
 			<h3><a href="../zonasql.html">volver</a></h3>
 			
 			</section>
