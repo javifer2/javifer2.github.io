@@ -3,15 +3,24 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>Formulario 1</title>
+		<style>
+			
+	</style>
 </head>
 <body>
 
 	<h3>Formulario muy sencillo</h3>
 	<form action="http://www.librosweb.es/maneja_formulario.php" method="post">
-		Escribe tu nombre:
+		<h3> Datos de cliente</h3>
+		<label for="nombre">Escribe tu nombre</label>
 		<input type="text" name ="nombre" value=""/>
+		<label for="NIF">NIF.:</label>
+		<input type="text" name="NIF" values =""/>
+		
 		<br/>
-		<input type="submit" values ="Enviar"/>
+		<label for="individual">Tipo de Habitaci&oacute;n</label><br/>
+		<input type="radio" name="individual" value="Individual" checked="unckecked"/>Individual<br/>
+		<input type="radio" name="Doble" value="Doble" checked="checked"/>Doble
 		
 	</form>
 

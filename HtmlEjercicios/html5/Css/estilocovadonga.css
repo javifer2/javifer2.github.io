@@ -1,0 +1,202 @@
+<style type="text/css">
+
+body{
+	font-family: fantasy;
+	font-size: 125%
+}
+nav{
+	margin:1px;
+}
+aside {
+	
+	float:left ;
+	width: 20%;
+	margin: 0px;
+	padding: 2% 2px 2% 2px;
+	background-color:  #F4F4F4;
+}
+footer{
+	clear:both;
+	background-color:  #0187F6;
+		padding: 2%;
+}
+
+
+.titular{
+		padding: 1.2%;
+		color: #0187F6;
+	 	text-align: center;
+		font-size: 200%;
+}
+.azul {
+	color:#0187F6;
+}
+/* listas menú */ 
+
+ul.menu {
+  background: #F4F4F4;
+  border: 1px solid  #0187F6;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+ul.menu li {
+  float: left;
+  width: 16.66%;
+}
+ul.menu li.encuesta{
+	 float: left;
+  width: 33.33%;
+}
+ul.menu li a {
+  border-left: 1px solid #FFF;
+  border-right: 1px solid #7C7C7C;
+  color: #0187F6;
+  display: block;
+  padding: .3em;
+	text-align: center;
+  text-decoration: none;
+	font-size: 100%;
+}
+section{
+	width: 79%;
+	margin-left: 21%;
+}
+/* anclajes */
+a { 
+	text-decoration: none; border-radius: 10px; padding: 2px 5px 5px 5px; color:#0187F6;
+	font-size: 120%;
+}
+a:hover { 
+	background: #ccc; 
+}
+/* parrafos */
+p.centrado {
+	 align-content:center;
+}
+p.parrafoazul{
+	color:blue;
+	font-size: 115%;
+	font-family: "Trebuchet MS", "Helvetica", sans-serif;
+	text-align: justify;
+	line-height: 1.5;
+	text-align: justify;
+}
+p.normal{
+	color: black;
+	font-size: 115%;
+	font-family: "Gill Sans Extrabold", Helvetica, sans-serif ;
+	text-align: justify;
+	line-height: 1.5;
+}
+p.pie {
+	color: white;
+	font-size: 115%;
+	font-family: "Gill Sans Extrabold", Helvetica, sans-serif ;
+	text-align: left;
+	line-height: 1.3;
+}
+p.anotaciones {
+	font-size: 115%;
+	/*font-family: "Trebuchet MS", "Helvetica", sans-serif;*/
+	font-family: fantasy;
+	text-align: justify;
+	line-height: 1.5;
+}
+.textoespecial{	
+	color:red;
+	font-size: 110%;
+	font-family: "Trebuchet MS", "Helvetica", sans-serif;
+	text-align: justify;
+	line-height: 1.5;
+}
+.textoazul{
+	color:blue;
+	font-size: 110%;
+	font-family: "Trebuchet MS", "Helvetica", sans-serif;
+	text-align: justify;
+	line-height: 1.5;
+}
+.fuenteitalica {
+	font-style: italic;
+	font-size: 110%;
+	font-family: "Trebuchet MS", "Helvetica", sans-serif;
+	text-align: justify;
+	line-height: 1.5;
+}
+.textocentrado{
+	font-size: 110%;
+	text-align: center;
+}
+p.grisoscuro {
+		color: #4A7C59;
+	line-height: 1.5;
+	
+}
+p.contieneImagen{
+	padding: 0% 3% 0% 3%;
+}
+/* bloques */
+blockquote{
+	margin: 1% 1% 1% 1%;
+	text-align: justify;
+}
+/* emfasis */
+em {
+	color: #0187F6;
+}
+
+/* h1 */
+h1.centrado {
+	text-align: center; 
+	color: white;
+}
+/* h2 */
+h2{
+	color:#0187F6;
+	border-color:  #0187F6;
+	border-style:solid;
+	border-bottom-color: silver;
+	border-top-color: #0187F6;
+	border-left-color: #0187F6;
+	border-right-color: silver;
+	background-color:  #F4F4F4;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	text-align: center;
+	font-size: 120%;
+}
+/* h3 */
+h3{
+	color:#0187F6;
+	border-color:  silver;
+	border-style: solid;
+	background-color:  #F4F4F4;;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	text-align: center;
+	font-size: 110%;
+}
+/* elementos flotantes */
+.izq {
+				float: left;
+		}
+.izq img {
+	padding: 1px;
+	max-width: 97%;
+	margin:6px;
+	border-style: solid;
+	border-color:#0187F6;
+}
+.logo {
+	width: 6%;
+	float: right;
+}
+
+.sinmargen {
+	margin: 1px;
+}
+.der {
+	float:right;
+}
