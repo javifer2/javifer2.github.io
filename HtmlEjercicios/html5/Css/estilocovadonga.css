@@ -200,3 +200,46 @@ h3{
 .der {
 	float:right;
 }
+/* campos para formularios */
+input{
+	width: 97%;
+	padding: 1%;
+	margin: 5px;
+}
+
+label{
+	text-align: left;
+	color: black;
+	font-size: 115%;
+	font-family: "Gill Sans Extrabold", Helvetica, sans-serif ;
+	text-align: justify;
+	line-height: 1.5;
+}
+select {
+	text-align: center;
+	width: 97%;
+	background-color: #F4F4F4;
+	padding: 2%;
+	font-size: 150%;
+}
+.listaImPar {
+	background-color:#0187F6;
+	font-size: 85%;
+}
+.listaPar{
+	background-color: white;
+	font-size: 85%;
+}
+input[type=submit] {
+	background-color: lightcoral;
+	padding: 7% 1% 7% 1%;
+	font-style: italic;
+}
+
+input[type=reset] {
+	background-color: blanchedalmond;
+	padding: 7% 1% 7% 1%;
+	font-size = 200%;
+  font-style: oblique;
+}
+

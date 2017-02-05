@@ -25,22 +25,52 @@
 		<hr/>
 	</nav>
 	
-	<form>
-		<div class="izq">
-				<p class="grisoscuro">La elaboraci&oacute;n de esta encuesta, es absolutamente confidencial, no se requiere de la introducci&oacute;n de ning&uacute;n dato personal, y caso de realizarlo, est&eacute; ser&aacute; obviado, ya que la finalidad es la realizaci&oacute;n de un mero ejercicio de estudi&oacute;, en Lenguaje de Marcas con la inclusi&oacute; de PHP.</p>
-				<p class="grisoscuro">Agradecimientos por participar en la misma.</p>
-				
-				<h2>Encuesta:</h2>
-					<p class="grisoscuro">(campo no requerido)</p>
-					<p class="normal">
-						<label for="nombre">Nombre:</label><br/>
-						<input type="text" id="nombre" name="nombre"/>
-						
-					</p>	
+	<form action="http://www.ecosoftconsulting.net" method="post">
+		<aside>
+				<div class="izq">
+					<?php 
+$a = "Módulo "; 
+$b = $a . "BASES DE DATOS";// ahora $b contiene "Módulo BASES DE DATOS"
+$a .= "BASES DE DATOS";// ahora $a también contiene "Módulo BASES DE DATOS"
+?>  
+ 
+						<blockquote>Utiliza los botones una vez cubierto el formulario, si as&iacute; lo deseas.</blockquote>
+						<hr/>
+						<br/>
+						<blockquote>
+							Una encuesta es un procedimiento dentro de los diseños de una investigación descriptiva en el que el investigador recopila datos por medio de un cuestionario previamente diseñado, sin modificar el entorno ni el fenómeno donde se recoge la información ya sea para entregarlo en forma de tríptico, gráfica o tabla. Los datos se obtienen realizando un conjunto de preguntas normalizadas dirigidas a una muestra representativa o al conjunto total de la población estadística en estudio, integrada a menudo por personas, empresas o entes institucionales, con el fin de conocer estados de opinión, ideas, características o hechos específicos.
+						</blockquote>
+						<input  type="submit" id ="enviar" name="enviar" value ="Enviar">
+						<input type="reset" id="borrar" name ="borrar" value ="Borrar">
+				</div>
+		</aside>
+		<section>
+			
+			<div class="izq">
+					<p class="grisoscuro">La elaboraci&oacute;n de esta encuesta, es absolutamente confidencial, no se requiere de la introducci&oacute;n de ning&uacute;n dato personal, y caso de realizarlo, est&eacute; ser&aacute; obviado, ya que la finalidad es la realizaci&oacute;n de un mero ejercicio de estudi&oacute;, en Lenguaje de Marcas con la inclusi&oacute; de PHP.</p>
+					<p class="grisoscuro">Agradecimientos por participar en la misma.</p>
 
-
-		</div>
+					<h2>Encuesta:</h2>
+								<label for="nombre">Nombre:</label>
+								<input type="text" id="nombre" name="nombre"/>
+								<label for="email">email:</label>
+								<input type="email" id="email" name="email"/>
+								<label for="fecha">Fecha de Nacimiento:</label>
+								<input type="date" id="fecha" name="fecha"/>
+								<label for="lista1">¿C&oacute;mo se ha resultado la navegaci&oacute;n?:</label>
+							<select id="lista1">
+								<option value="1" class="listaPar">No he tenido errores. Ha sido fluida</option>
+								<option value="2" class="listaImpar" >Funcion&oacute; bien, pero no tiene la coherencia esperada</option>
+								<option value="3" class="listaPar">Interesante, pero no ha respondido a las expectavias</option>
+								<option value="4" class="listaImpar" >Todo correcto, pero alg&uacute;n enlace esta roto.</option>
+								<option value="5" class="listaPar">Adecuada, pero con varios problemas</option>
+								<option value="6" class="listaImpar">Nada bien.</option>
+							</select>
+			</div>
+		</section>
 	</form>	
+		
+	
 
 </body>
 </html>
