@@ -217,29 +217,42 @@ label{
 }
 select {
 	text-align: center;
-	width: 97%;
+	width: 48%;
 	background-color: #F4F4F4;
 	padding: 2%;
 	font-size: 150%;
+	margin: 5px;
 }
-.listaImPar {
-	background-color:#0187F6;
+.listaImpar {
+	background-color:white;
 	font-size: 85%;
 }
 .listaPar{
-	background-color: white;
+	background-color: #0187F6;
 	font-size: 85%;
+}
+.secundaria{
+	background-color: aliceblue;
+	color:gray;
 }
 input[type=submit] {
 	background-color: lightcoral;
 	padding: 7% 1% 7% 1%;
-	font-style: italic;
 }
 
 input[type=reset] {
 	background-color: blanchedalmond;
 	padding: 7% 1% 7% 1%;
-	font-size = 200%;
-  font-style: oblique;
 }
-
+input[type=radio] {
+	width: 2%;
+	text-align: left;
+}
+input[type=range]:before {
+		left: 0em;
+	content: attr(min);
+}
+input[type=range]:after {
+		right: 0em;
+	content: attr(max);
+}
