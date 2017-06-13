@@ -8,6 +8,7 @@
 
     <link rel="stylesheet" type="text/css" media="screen" href="../stylesheets/stylesheet.css">
 
+
     <title>Javifer2.GitHub.io</title>
   </head>
 
@@ -29,9 +30,9 @@
       <section id="main_content" class="inner">
 				<h3>Aprendiendo Sql a Martillazos.</h3>
 				
-					<p>Probablemente, no quizá no he comenzado bien, seguro, que no es la mejor manera de aprender <strong>SQL</strong>, pero es básicamente, la que yo he ejecutado, por tanto voy a poner encima de la mesa, todo lo que yo he aprendido en estos años, contando que quizá no es el modo más ortodoxo, seguro que no es el más eficaz, pero por supuesto con un enfoque diferente.			</p>
+					<p>Probablemente, no quizá no he comenzado bien, seguro, que no es la mejor manera de aprender <strong>SQL</strong>, pero es básicamente, la que yo he ejecutado, por tanto voy a poner encima de la mesa, todo lo que yo he aprendido en estos años, contando que quizá no es el modo más ortodoxo, seguro que no es el más eficaz, pero por supuesto, te aportará un enfoque diferente.			</p>
 				
-				<h3>La mejor manera de motivar a tu cerebro, es iniciar a la fuerza.</h3>
+				<h3>La mejor manera de motivar a tu cerebro, es iniciarlo a la fuerza.</h3>
 					<p> Nos saltaremos toda la teoría para arrancar directamente el <strong>Sql Managment Studio.</strong></p>
 				
 					<p>Youtube esta lleno de videos para la instalación de Sql server, de un modo simple. Te recomiendo la versión 2016, sin ninguna duda, además de que es la que verás en las capturas de pantalla. Si bien podrás seguir esta serie de capítulos aunque no dispongas de esta versión.</p>
@@ -79,10 +80,11 @@
 				
 				<h3>Ya tenemos base de datos, pues vamos a por la primera tabla</h3>
 				
-					<p>Pulsa Nueva consulta</p>		
-				
+					<p>Pulsa Nueva consulta</p>	
+
+
 					<p><code>Use Pruebas<br/>go<br/>Create Table Alumnos (<br/>Id int Primary key not null identity (1,1), <br/>Nombre varchar(50) not null, <br/>Apellido1 varchar(50) not null,<br/> Apellido2 varchar(50) not null,<br/> Direccion varchar(100) not null,<br/> Telefono varchar(20)<br/>)<br/>go</code></p>
-				
+
 					<p><img src="../images/createtable.jpg"/></p>
 					
 					<p>Ya tenemos nuestra primera tabla.</p>
@@ -116,6 +118,29 @@
 
       </section>
     </div>
+		
+			<aside>
+
+				<div id="aside_content_wrap" class="derecha">
+						<h4 class="der_blanco">Capítulos</h4>
+							<ol>
+									<li><h6><a href="sqlcurso/capitulo1.html">Capítulo 1 Inicio.¿Como se puede aprender a martillazos?</a></h6></li>
+									<li><h6><a href="sqlcurso/conexion.html"> ¿Como conectarme con el Manager? </a></h6></li>	
+									<li><h6><a href="sqlcurso/capitulo2.html">Mis primeros pasitos</a></h6></li>
+									<li><h6><a href="sqlcurso/capitulo3.html">DML</a></h6></li>
+									<li><h6><a href="sqlcurso/capitulo4.html">SLEECT la diosa a homenajear. Empezando con el curro </a></h6></li>
+
+
+									<li><h6><a href="eliminarldf.html"> Si borro va más lento y encima ocupa más, ¿Como solucionarlo? </a></h6></li>
+									<br><br/>
+						</ol>
+				</div>
+				<div id="aside_content_wrap" class="derecha">
+						<h4 class="der_blanco">Enlaces</h4>
+							<p><a href="https://www.microsoft.com/es-es/server-cloud/products/sql-server-editions/sql-server-express.aspx">Enlace a sitio de <em>Microsoft</em> para descargar Sql Server Express</a></p>
+				</div>
+			</aside>
+		
 
     <!-- FOOTER  -->
     <div id="footer_wrap" class="outer">
@@ -125,6 +150,5 @@
     </div>
 
     
-
   </body>
 </html>

@@ -28,6 +28,9 @@ time, mark, audio, video {
   font: inherit;
   vertical-align: baseline;
 }
+html{
+margin: 10px;	
+}
 
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
@@ -101,7 +104,9 @@ p {
 footer p {
   color: #f2f2f2;
 }
-
+.der_blanco{
+	color:white;
+}
 a {
   text-decoration: none;
   color: #007edf;
@@ -283,7 +288,18 @@ Full-Width Styles
 *******************************************************************************/
 
 .outer {
-  width: 100%;
+  width: 80%;
+	float:left;
+	
+}
+.derecha {
+	width: 18%;
+	float :right;
+	color:White;
+	margin: 3px;
+	
+
+
 }
 
 .inner {
